@@ -8,8 +8,8 @@ db_password = os.environ['RDS_PASSWORD']
 db_host = os.environ['RDS_HOSTNAME']
 db_port = os.environ['RDS_PORT']
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@flask-demo.co1s6zhqgeco.us-west-2.rds.amazonaws.com:3306/demodb'.format(db_user, db_password)
-
+# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@flask-demo.co1s6zhqgeco.us-west-2.rds.amazonaws.com:3306/demodb'.format(db_user, db_password)
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(db_user, db_password, db_host, db_port, db_name)
 # Uncomment the line below if you want to work with a local DB
 #SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
 
